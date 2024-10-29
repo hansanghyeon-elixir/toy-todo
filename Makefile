@@ -1,2 +1,2 @@
 init:
-	@export $(shell cat .env | xargs)
+	export $(cat .env | xargs)
