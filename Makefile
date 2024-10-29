@@ -1,2 +1,2 @@
-dev:
-	export $(cat .env | xargs) && mix phx.server
+init:
+	@export $(shell cat .env | xargs)
