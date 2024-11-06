@@ -3,11 +3,12 @@ defmodule AppWeb.ItemHTML do
 
   embed_templates "item_html/*"
 
-  @doc """
-  Renders a item form.
-  """
-  attr :changeset, Ecto.Changeset, required: true
-  attr :action, :string, required: true
+  # item.status == 1일 경우 리스트 항목에 "completed" 클래스를 추가하세요.
+  def complete(item) do
+    case item.status do
+      1 -> "completed"
+      _ -> ""
+    end
+  end
 
-  def item_form(assigns)
 end
